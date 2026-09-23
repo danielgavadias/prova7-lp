@@ -34,15 +34,15 @@ void sistema()
 int cadastro()
 {
     
-    // fopen("boletins.txt", "a");
+    boletins = fopen("boletins.txt", "a");
 
-    // if(boletins == NULL)
-    // {
-    //     printf("\n\nAAAAAAAAA\n\n");
-    // }
+    if(boletins == NULL)
+    {
+        printf("\n\nAAAAAAAAA\n\n");
+    }
     
-    // int debug = 2;
-    // fprintf(boletins, "\n\n%d\n\n", &debug);
+    int debug = 2;
+    fprintf(boletins, "\n\n%dAAAAAAAAAAAAAAAAA\n\n", &debug);
     
     printf("\n==================\n");
     printf("     CADASTRO      \n");
