@@ -5,7 +5,7 @@ int opcao;
 float n1, n2, n3, n4, media;
 char nome[], sn;
 
-FILE *boletins
+FILE *boletins;
 
 void sistema()
 {
@@ -34,19 +34,32 @@ void sistema()
 int cadastro()
 {
     
+    fopen("boletins.txt", "a");
+    
+    int debug = 2;
+    fprintf(boletins, "\n\n%d\n\n");
+    
     printf("\n==================\n");
     printf("     CADASTRO      \n");
     printf("==================\n");
 
     printf("\nInsira o nome do aluno: "); scanf("%s", nome);
 
-    printf("\nInsira nota da 1° avaliação: "); scanf("%f", &n1); 
-    printf("Insira nota da 2° avaliação: "); scanf("%f", &n2);
-    printf("Insira nota da 3° avaliação: "); scanf("%f", &n3);
-    printf("Insira nota da 4° avaliação: "); scanf("%f", &n4);
+    printf("\nInsira nota da 1° avaliação: "); 
+    scanf("%f", &n1); 
+   
+    printf("Insira nota da 2° avaliação: "); 
+    scanf("%2f", &n2);
+    fprintf(boletins, "N2: %f", n2);
+   
+    printf("Insira nota da 3° avaliação: "); 
+    scanf("%f", &n3);
+   
+    printf("Insira nota da 4° avaliação: "); 
+    scanf("%f", &n4);
 
     media = (n1+n2+n3+n4)/4;
-    printf("\n\n\n%f\n\n\n", media);
+   
     printf("\nDesejas voltar ao menu? "); scanf(" %c", &sn);
 
     if(sn == 's')
