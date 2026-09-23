@@ -5,6 +5,8 @@ int opcao;
 float n1, n2, n3, n4, media;
 char nome[], sn;
 
+FILE *boletins
+
 void sistema()
 {
     printf("\n==================\n");
@@ -38,14 +40,14 @@ int cadastro()
 
     printf("\nInsira o nome do aluno: "); scanf("%s", nome);
 
-    printf("\nInsira nota da 1° avaliação: "); scanf("%f", &n1);
+    printf("\nInsira nota da 1° avaliação: "); scanf("%f", &n1); 
     printf("Insira nota da 2° avaliação: "); scanf("%f", &n2);
     printf("Insira nota da 3° avaliação: "); scanf("%f", &n3);
     printf("Insira nota da 4° avaliação: "); scanf("%f", &n4);
 
     media = (n1+n2+n3+n4)/4;
-
-    printf("Desejas voltar ao menu? "); scanf(" %c", &sn);
+    printf("\n\n\n%f\n\n\n", media);
+    printf("\nDesejas voltar ao menu? "); scanf(" %c", &sn);
 
     if(sn == 's')
     {
@@ -63,8 +65,40 @@ int boletim()
     printf("      BOLETIM      \n");
     printf("==================\n");
 
-    printf
+    printf("\nAluno: %s", nome);
+    printf("\nNota do aluno na 1° avaliação: %f", n1);
+    printf("\nNota do aluno na 2° avaliação: %f", n2);
+    printf("\nNota do aluno na 3° avaliação: %f", n3);
+    printf("\nNota do aluno na 4° avaliação: %f", n4);
+    //printf("\n\n\n%f\n\n\n", media);
+    
+     if(media>=7.0)
+    {
+        printf("\nMédia: %f, Aluno APROVADO.", media);
+    }
+    else
+    {
+        if (media>=5.0)
+        {
+            printf("\nMédia: %f, Aluno sob RECUPERAÇÃO.", media);
+        }
+        
+        else
+        {
+            printf("\nMédia: %f, Aluno REPROVADO.", media);
+        }
+    }
 
+    printf("\n\nDesejas voltar ao menu? "); scanf(" %c", &sn);
+
+    if(sn == 's')
+    {
+        sistema();
+    }
+    else
+    {
+        printf("Sistema encerrado.");
+    }
 
 }
 
