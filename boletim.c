@@ -3,7 +3,7 @@
 
 int opcao;
 float n1, n2, n3, n4, media;
-char nome[], sn;
+char nome[], sn, sn2;
 
 FILE *boletins;
 
@@ -34,10 +34,15 @@ void sistema()
 int cadastro()
 {
     
-    fopen("boletins.txt", "a");
+    // fopen("boletins.txt", "a");
+
+    // if(boletins == NULL)
+    // {
+    //     printf("\n\nAAAAAAAAA\n\n");
+    // }
     
-    int debug = 2;
-    fprintf(boletins, "\n\n%d\n\n");
+    // int debug = 2;
+    // fprintf(boletins, "\n\n%d\n\n", &debug);
     
     printf("\n==================\n");
     printf("     CADASTRO      \n");
@@ -102,15 +107,24 @@ int boletim()
         }
     }
 
-    printf("\n\nDesejas voltar ao menu? "); scanf(" %c", &sn);
+    printf("\n\nDesejas cadastrar outro aluno? "); scanf(" %c", &sn);
 
     if(sn == 's')
     {
-        sistema();
+        cadastro();
     }
     else
     {
-        printf("Sistema encerrado.");
+        printf("\n\nDesejas voltar ao menu? "); scanf(" %c", &sn2);
+    
+        if(sn == 's')
+        {
+            sistema();
+        }
+        else
+        {
+            printf("Sistema encerrado.");
+        }    
     }
 
 }
