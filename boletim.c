@@ -65,16 +65,26 @@ int cadastro()
 
     media = (n1+n2+n3+n4)/4;
    
-    printf("\nDesejas voltar ao menu? "); scanf(" %c", &sn);
+    printf("\n\nDesejas cadastrar outro aluno? "); scanf(" %c", &sn);
 
     if(sn == 's')
     {
-        sistema();
+        cadastro();
     }
     else
     {
-        printf("Sistema encerrado.");
+        printf("\n\nDesejas voltar ao menu? "); scanf(" %c", &sn2);
+    
+        if(sn == 's')
+        {
+            sistema();
+        }
+        else
+        {
+            printf("Sistema encerrado.");
+        }    
     }
+
 }
 
 int boletim()
@@ -88,7 +98,6 @@ int boletim()
     printf("\nNota do aluno na 2° avaliação: %f", n2);
     printf("\nNota do aluno na 3° avaliação: %f", n3);
     printf("\nNota do aluno na 4° avaliação: %f", n4);
-    //printf("\n\n\n%f\n\n\n", media);
     
      if(media>=7.0)
     {
